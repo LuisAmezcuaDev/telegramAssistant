@@ -29,7 +29,7 @@ def main():
     # Inicializamos la app de Telegram
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
-    # Registramos el manejador de mensajes de texto (excluyendo comandos si los hubiera)
+    # Registramos el manejador de mensajes de texto
     app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
 
     logging.info("Asistente iniciado y escuchando en Telegram...")
